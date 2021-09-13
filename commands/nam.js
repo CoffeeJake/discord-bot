@@ -8,7 +8,7 @@ module.exports = {
 		let namNum = namRoll();
         let namString = "./nam/picture (" + String(namNum) + ").png";
 		await interaction.reply('Heres a vintage Nam');
-		await interaction.followUp({files: [namString]});
+		await interaction.reply({content: "Here's a vintage Nam!", files: [namString]});
 	},
 };
 
