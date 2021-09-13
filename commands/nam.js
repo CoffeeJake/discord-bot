@@ -7,7 +7,6 @@ module.exports = {
 	async execute(interaction) {
 		let namNum = namRoll();
         let namString = "./nam/picture (" + String(namNum) + ").png";
-		await interaction.reply('Heres a vintage Nam');
 		await interaction.reply({content: "Here's a vintage Nam!", files: [namString]});
 	},
 };
