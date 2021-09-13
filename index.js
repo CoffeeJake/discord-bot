@@ -1,4 +1,3 @@
-// Require the necessary discord.js classes
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
@@ -14,7 +13,6 @@ for (const file of commandFiles) {
 	// With the key as the command name and the value as the exported module
 	client.commands.set(command.data.name, command);
 }
-
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
 	console.log('Ready!');
@@ -26,7 +24,8 @@ client.on('interactionCreate', async interaction => {
 	if (!command) return;
 	try {
 		await command.execute(interaction);
-	} catch (error) {
+	}
+	catch (error) {
 		console.error(error);
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
